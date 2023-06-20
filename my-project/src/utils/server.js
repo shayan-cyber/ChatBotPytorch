@@ -18,3 +18,27 @@ export const sendMessage =  async (body) =>{
     }  
 }
 
+
+
+export const sendMessageWS = async (room , socket,currentMessage) =>{
+    // console.log("herew");
+    if (currentMessage !== "") {
+        const messageData = {
+          room: room,
+        //   author: username,
+          message: currentMessage,
+          time:
+            new Date(Date.now()).getHours() +
+            ":" +
+            new Date(Date.now()).getMinutes(),
+        };
+        // console.log("herew");
+        
+
+            const res =  socket.emit("send_message", messageData);
+        
+        // console.log("herew", res);
+        // setMessageList((list) => [...list, messageData]);
+        // setCurrentMessage("");
+      }
+}

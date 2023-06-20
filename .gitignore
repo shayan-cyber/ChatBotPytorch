@@ -2,6 +2,7 @@
 
 # dependencies
 /my-project/node_modules
+/socketbackend/node_modules
 /.pnp
 .pnp.js
 
